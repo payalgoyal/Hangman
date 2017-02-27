@@ -1,0 +1,90 @@
+
+html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+	
+	font-family: 'Lato', verdana, sans-serif;
+}
+img, embed, object, video {
+	max-width:100%;
+    height:auto;
+}
+#wrapper {
+	min-height:100%;
+	height: auto;
+	position:relative;
+}
+#header {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	width: 80%;
+}
+#game_area {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	width: 100%;
+	padding-left:20%;
+	padding-right:20%;
+	font-weight: 300;
+    font-size: 1.2em;
+}
+#game_area_left {
+	float:left;
+	padding-right: 5%;
+	min-width: 123px;
+	min-height: 154px;
+
+}
+#query {
+	font-weight: 300;
+    font-size: 1.8em;
+    letter-spacing: 8px;	
+}
+.streak {
+	font-family: courier, 'Lato', verdana, sans-serif;
+	font-weight: 300;
+    font-size: 0.8em;
+}
+#current {
+	padding-right: 120px;
+}
+
+#wrong_choices {
+	text-decoration: line-through;
+}
+
+#play_again {
+	min-height:33px;
+}
+#play_again button {
+	padding: 8px 20px 8px 20px;
+	border: 1px solid #a1a1a1;
+    border-radius: 3px;
+    font-size: 0.7em;
+	color: #ffffff;
+	background-color: #281a16;
+	cursor: pointer; cursor: hand; 
+}
+#game_area_right {
+	float:left;
+	padding-left:3%;
+}
+#cartoon img {
+	position: absolute;
+	padding-top: 3%;
+}
+#footer {
+	display: block;
+	bottom:0;
+    margin-left: auto;
+    margin-right: auto;
+	width:80%;
+}
