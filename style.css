@@ -24,23 +24,22 @@ img, embed, object, video {
 	display: block;
 	margin-left: auto;
     margin-right: auto;
-	width: 80%;
+	width: 100%;
 }
 #game_area {
 	display: block;
 	margin-left: auto;
     margin-right: auto;
 	width: 100%;
-	padding-left:20%;
-	padding-right:20%;
+	padding-left:5%;
+	/* padding-right:20%; */
 	font-weight: 300;
     font-size: 1.2em;
 }
 #game_area_left {
-/* 	float:left; */
-	margin-left: 25%;
-	min-width: 123px;
-	min-height: 154px;
+	float:left;
+	/* min-width: 123px;
+	min-height: 154px; */
 
 }
 #query {
@@ -74,25 +73,40 @@ img, embed, object, video {
 	cursor: pointer; cursor: hand; 
 }
 #game_area_right {
-	float:left;
-	padding-left:3%;
+	float:right;
+	/* padding-left:3%; */
+}
+#choice{
+	clear: both;
+	padding-top: 10%;
+	margin-left: 10%;
+	text-align: center;
+}
+#play_area{
+	clear: both;
+	position: relative;
+	
 }
 #cartoon img {
 	position: absolute;
 	padding-top: 3%;
 	padding-bottom: 3%;
 }
+.bestStreak{
+	clear: left;
+	float: right;
+}
 #footer {
 	display: block;
 	bottom:0;
     margin-left: auto;
     margin-right: auto;
-	width:80%;
+	width:100%;
 	clear: both;
 }
 
 .keys{
 	padding: 10px;
-	margin: 5px
+	/* margin: 5px */
 }
 

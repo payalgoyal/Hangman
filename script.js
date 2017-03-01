@@ -135,7 +135,7 @@ var compare=function(word,enteredKey,ran) {
 					case 1:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/cartoon_2.png");
-						x.setAttribute("width", "123");
+						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 2:
