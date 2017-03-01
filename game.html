@@ -1,0 +1,76 @@
+
+<html>
+<head>
+	<title>My HangMan game</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="script.js"></script>
+	<script src="celebrityList.js"></script>
+	<script src="bollywoodList.js"></script>
+	<script src="jquery-1.11.2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	   
+	<div id="wrapper">
+	<div id="header"><img src="images/header_wide.jpg"> </div>
+	<div id="game_area">
+		<div id="game_area_left">
+			<div id="cartoon"> <img src="images/cartoon_1.png"> </div>
+		</div>
+		<br><br>
+		<div id="game_area_right">
+			<span class="streak">Current streak:<span id="current">0</span></span>
+			<span class="streak">Best streak:<span id="best">0</span></span>
+			<p id="query"></p>
+			<p id="wrong_choices">&nbsp;</p>
+			<p id="chances">You have 5 chances</p>
+			<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Play Again</button>
+		</div>
+		
+	</div>
+	<div id="footer">
+		
+	</div>
+	</div>
+	
+	<script>
+		for (keys = 65; keys <= 90; keys++){
+			var key = document.createElement("button");
+			key.setAttribute("type","button");
+			key.setAttribute("value","&#"+keys);
+			key.setAttribute("class","keys");
+			key.setAttribute("onclick","registerEnteredKey(this)");
+			key.innerHTML = String.fromCharCode(keys);
+			
+			var foot = document.getElementById("footer");
+			foot.appendChild(key);
+		}
+		for (keys = 48; keys <= 57; keys++){
+			var key = document.createElement("button");
+			key.setAttribute("type","button");
+			key.setAttribute("value","&#"+keys);
+			key.setAttribute("class","keys");
+			key.setAttribute("onclick","registerEnteredKey(this)");
+			key.innerHTML = String.fromCharCode(keys);
+			
+			var foot = document.getElementById("footer");
+			foot.appendChild(key);
+		}
+		var queryString = new Array();
+		var query = window.location.search.split('?')[1];
+		var cat = query.split('=')[1];
+		
+		if (cat == "1"){
+			celebrityList();
+		}
+		if (cat == "2"){
+			bollywoodList();
+		}
+	</script>
+	
+	
+	
+	
+	
+</body>
+</html>

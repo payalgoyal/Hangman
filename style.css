@@ -37,8 +37,8 @@ img, embed, object, video {
     font-size: 1.2em;
 }
 #game_area_left {
-	float:left;
-	padding-right: 5%;
+/* 	float:left; */
+	margin-left: 25%;
 	min-width: 123px;
 	min-height: 154px;
 
@@ -80,6 +80,7 @@ img, embed, object, video {
 #cartoon img {
 	position: absolute;
 	padding-top: 3%;
+	padding-bottom: 3%;
 }
 #footer {
 	display: block;
@@ -87,4 +88,11 @@ img, embed, object, video {
     margin-left: auto;
     margin-right: auto;
 	width:80%;
+	clear: both;
 }
+
+.keys{
+	padding: 10px;
+	margin: 5px
+}
+

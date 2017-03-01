@@ -1,54 +1,81 @@
+var enteredKey = "";
+var m=1;
+var wrongChoice = 0;
+var num = 0;
+var streak = 0;
+var maxStreak = streak;
+var wrongOption = [];
+var opt=0;
+var alreadySelected=0;
+var ranCheck = [];
+var ranCheckCounter=0;
+var ran;
+var flag=0;
+var blankSpace = 1;
+var charIncompleteArray = [];
+
 var main=function(incompleteWord,completeWord) {
-	var m=1;
-	var wrongChoice = 0;
-	var num = 0;
-	var enteredKey;
-	var streak = 0;
-	var maxStreak = streak;
-	var wrongOption = [];
-	var opt=0;
-	var alreadySelected=0;
-	var ranCheck = [];
-	var ranCheckCounter=0;
-	var ran;
-	var flag=0;
-	
-	var returnRandom= function() {
-		ran = Math.floor(Math.random() * incompleteWord.length);
-		if (ranCheck.length === 0){
-			ranCheck[0] = ran;
-			return ran;
-		}
-		else {
-			ranCheckCounter=ranCheck.length-5;
-			if (ranCheckCounter<0) {
-					ranCheckCounter=0;
-			}
-			while (ranCheckCounter<ranCheck.length) {
-				while (ranCheck[ranCheckCounter]===ran) {
-					ran = Math.floor(Math.random() * incompleteWord.length);
-				}	
-				ranCheckCounter=ranCheckCounter+1;
-			}
-			ranCheck[ranCheck.length]=ran;
-			return ran;
-		}
-	 }
-	var enteredKey;
+	 
+	// var enteredKey;
 	ran=returnRandom();
 	document.getElementById('query').innerHTML = incompleteWord[ran];
-	var charIncompleteArray = [];
+	
 	for (var i=0;i<incompleteWord[ran].length;i++){
 		charIncompleteArray[i]=incompleteWord[ran][i];
 	}
 	
-	var compare=function(word,enteredKey,ran) {
+	document.getElementById('current').innerHTML = streak;
+	 $(document).keypress(function(event){
+		enteredKey = String.fromCharCode(event.keyCode);
+		enteredKey = enteredKey.toUpperCase();
+		if (wrongChoice < 5 && flag==0) {
+			compare(completeWord[ran],enteredKey,ran);
+		}
+		else {
+			document.getElementById('wrong').innerHTML = wrongChoice;
+			document.getElementById("GameOverMessage").innerHTML = "Could not complete in given steps of " + wrongChoice;
+		}
+	});
+};
+
+var returnRandom= function() {
+	ran = Math.floor(Math.random() * incompleteWord.length);
+	if (ranCheck.length === 0){
+		ranCheck[0] = ran;
+		return ran;
+	}
+	else {
+		ranCheckCounter=ranCheck.length-5;
+		if (ranCheckCounter<0) {
+				ranCheckCounter=0;
+		}
+		while (ranCheckCounter<ranCheck.length) {
+			while (ranCheck[ranCheckCounter]===ran) {
+				ran = Math.floor(Math.random() * incompleteWord.length);
+			}	
+			ranCheckCounter=ranCheckCounter+1;
+		}
+		ranCheck[ranCheck.length]=ran;
+		return ran;
+	}
+ }
+
+var resetFunc = function(){
+	ran=returnRandom();
+	document.getElementById('query').innerHTML = incompleteWord[ran];
+	for (var ch=0;ch<incompleteWord[ran].length;ch++){
+		charIncompleteArray[ch] = incompleteWord[ran][ch];
+		charIncompleteArray.splice(incompleteWord[ran].length,charIncompleteArray.length);
+	}
+}
+
+var compare=function(word,enteredKey,ran) {
 		var changed = 0;
 		var index = 0;
-		var btn = document.createElement("BUTTON");
-		var t = document.createTextNode("Play Again");
-		btn.appendChild(t);
-		btn.setAttribute("id", "play_again_btn");
+		// var btn = document.createElement("BUTTON");
+		// var t = document.createTextNode("Play Again");
+		// btn.appendChild(t);
+		// btn.setAttribute("id", "play_again_btn");
 		//checks if the enteredKey is present in word
 		while (index<word.length){
 			if (enteredKey === word[index]){
@@ -58,7 +85,7 @@ var main=function(incompleteWord,completeWord) {
 			index = index+1;
 		}	
 
-		var blankSpace = 0;
+		blankSpace = 0;
 		for (var j=0;j<incompleteWord[ran].length;j++){
 			if (charIncompleteArray[j]==='_'){
 				blankSpace = blankSpace+1;
@@ -79,7 +106,8 @@ var main=function(incompleteWord,completeWord) {
 			else 
 				maxStreak=streak;
 			document.getElementById('best').innerHTML = maxStreak;
-			document.getElementById("play_again").appendChild(btn);
+			document.getElementById('play_again').innerHTML = "Next";
+			// document.getElementById("play_again").appendChild(btn);
 			flag=1;
 		} 		 
 		
@@ -137,7 +165,8 @@ var main=function(incompleteWord,completeWord) {
 						document.getElementById('query').innerHTML = word;
 						streak=0;
 						document.getElementById('current').innerHTML = streak;
-						document.getElementById("play_again").appendChild(btn);
+						document.getElementById('play_again').innerHTML = "Play Again";
+						// document.getElementById("play_again").appendChild(btn);
 						flag=1;						
 						break;
 					default:		
@@ -145,43 +174,27 @@ var main=function(incompleteWord,completeWord) {
 			}
 			
 		}
-		opt=0;
-		
-		//on clicking play again
-		$('#play_again_btn').click(function() {
-			num = num + 1;
-			flag=0;
-			wrongChoice = 0;
-			document.getElementById('wrong_choices').innerHTML = "&nbsp;";
-			document.getElementById('cartoon').innerHTML = "";
-			document.getElementById('chances').innerHTML = "You have "+(5-wrongChoice)+" chances left";
-			document.getElementById('play_again').innerHTML = "";
-			var x = document.createElement("IMG");
-			x.setAttribute("src", "images/cartoon_1.png");
-			x.setAttribute("width", "123");
-			document.getElementById("cartoon").appendChild(x);
-			resetFunc();
-		});
-		var resetFunc = function(){
-			ran=returnRandom();
-			document.getElementById('query').innerHTML = incompleteWord[ran];
-			for (var ch=0;ch<incompleteWord[ran].length;ch++){
-				charIncompleteArray[ch] = incompleteWord[ran][ch];
-				charIncompleteArray.splice(incompleteWord[ran].length,charIncompleteArray.length);
-			}
-		}
-	}
-	document.getElementById('current').innerHTML = streak;
-	$(document).keypress(function(event){
-		enteredKey = String.fromCharCode(event.keyCode);
-		enteredKey = enteredKey.toUpperCase();
-		if (wrongChoice < 5 && flag==0) {
-			compare(completeWord[ran],enteredKey,ran);
-		}
-		else {
-			document.getElementById('wrong').innerHTML = wrongChoice;
-			document.getElementById("GameOverMessage").innerHTML = "Could not complete in given steps of " + wrongChoice;
-		}
-	});			
-};
-	//$(document).ready(main);
+}
+
+//on clicking play again
+function playAgain(){
+	num = num + 1;
+	flag=0;
+	wrongChoice = 0;
+	document.getElementById('wrong_choices').innerHTML = "&nbsp;";
+	document.getElementById('cartoon').innerHTML = "";
+	document.getElementById('chances').innerHTML = "You have "+(5-wrongChoice)+" chances left";
+	document.getElementById('play_again').innerHTML = "Play Again";
+	var x = document.createElement("IMG");
+	x.setAttribute("src", "images/cartoon_1.png");
+	x.setAttribute("width", "123");
+	document.getElementById("cartoon").appendChild(x);
+	resetFunc();
+}
+
+function registerEnteredKey(keyEntered){
+	enteredKey = keyEntered.innerHTML;
+	enteredKey = enteredKey.toUpperCase();
+	compare(completeWord[ran],enteredKey,ran);
+}
+
