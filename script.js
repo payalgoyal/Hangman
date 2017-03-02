@@ -98,7 +98,7 @@ var compare=function(word,enteredKey,ran) {
 		//if all letters are matched
 		else {
 			document.getElementById('query').innerHTML = word;
-			document.getElementById('chances').innerHTML = "You are correct!!";
+			// document.getElementById('chances').innerHTML = "You are correct!!";
 			streak++;
 			document.getElementById('current').innerHTML = streak;
 			if (streak<maxStreak)
@@ -129,7 +129,7 @@ var compare=function(word,enteredKey,ran) {
 				wrongOption[wrongChoice] = enteredKey;
 				wrongChoice = wrongChoice+1;
 				$('<span>').text(enteredKey+" ").appendTo("#wrong_choices");
-				document.getElementById('chances').innerHTML = "You have "+(5-wrongChoice)+" chances left";
+				// document.getElementById('chances').innerHTML = "Chances Left - "+(5-wrongChoice);
 				//Switch block to draw the graphic
 				switch(wrongChoice) {
 					case 1:
@@ -161,7 +161,7 @@ var compare=function(word,enteredKey,ran) {
 						x.setAttribute("src", "images/animation.gif");
 						x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
-						document.getElementById('chances').innerHTML = "You ran out of choices!!";
+						// document.getElementById('chances').innerHTML = "Game Over";
 						document.getElementById('query').innerHTML = word;
 						streak=0;
 						document.getElementById('current').innerHTML = streak;
@@ -183,7 +183,7 @@ function playAgain(){
 	wrongChoice = 0;
 	document.getElementById('wrong_choices').innerHTML = "&nbsp;";
 	document.getElementById('cartoon').innerHTML = "";
-	document.getElementById('chances').innerHTML = "You have "+(5-wrongChoice)+" chances left";
+	document.getElementById('chances').innerHTML = "Chances Left - "+(5-wrongChoice);
 	document.getElementById('play_again').innerHTML = "Play Again";
 	var x = document.createElement("IMG");
 	x.setAttribute("src", "images/cartoon_1.png");

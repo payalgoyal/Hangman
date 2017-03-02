@@ -14,17 +14,22 @@
 	<div id="wrapper">
 	<div id="header"><img src="images/header_wide.jpg"> </div>
 	<div id="game_area">
-		<div id="game_area_left">
-			<div id="cartoon"> <img src="images/cartoon_1.png"> </div>
-		</div>
-		<div id="game_area_right">
-			<span id="bestStreak" class="streak">Best streak:<span id="best">0</span></span><br/>
-			<span class="streak">Current streak:<span id="current">0</span></span>
-	 	</div>
+            <!-- <div id="game_area_right"> -->
+                <span id="bestStreak" class="streak">Best Streak:<span id="best">0</span></span><br/>
+          <!--   </div> -->
+            
+            <!-- <div id="game_area_left"> -->
+                <!-- <div id="cartoon"> <img src="images/cartoon_1.png"> </div> -->
+                <span id="currStreak" class="streak">Current streak:<span id="current">0</span></span>
+           <!--  </div> -->
+		   <div id="chanceDiagram">
+				<div id="cartoon"> <img src="images/cartoon_1.png"> </div>
+				<div class="chancesLeft">Chances Left Diagram</div>
+				<span id="wrong_choices">&nbsp;</span><br/>
+			</div>
+			
 		<div id="play_area">
-			<p id="chances">You have 5 chances</p>
-			<p id="wrong_choices">&nbsp;</p>
-			<p id="query"></p>
+			<span id="query"></span><br/>
 			<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Play Again</button>
 		</div>
 		
