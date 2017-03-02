@@ -109,8 +109,8 @@ var compare=function(word,enteredKey,ran) {
 			document.getElementById('play_again').innerHTML = "Next";
 			// document.getElementById("play_again").appendChild(btn);
 			flag=1;
-		} 		 
-		
+		} 	
+
 		opt = 0;
 		
 		//executes when enteredKey is not present anywhere in the word
@@ -169,7 +169,7 @@ var compare=function(word,enteredKey,ran) {
 						document.getElementById('current').innerHTML = streak;
 						document.getElementById('play_again').innerHTML = "Play Again";
 						// document.getElementById("play_again").appendChild(btn);
-						flag=1;		
+						flag=1;	
 						var keyElem = document.getElementsByClassName("keys");
 						for(var keyEle=0;keyEle<keyElem.length;keyEle++){
 							keyElem[keyEle].disabled = true;

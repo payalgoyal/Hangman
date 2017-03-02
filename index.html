@@ -10,18 +10,19 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-	<form action="" method="GET">
-		<select id="category" name="category">
-		<option value="1">Celebrity</option>
-		<option value="2">Bollywood Movies</option>
-		</select>
-		<button type="button" value="Submit" onclick="categoryChange()" > Submit </button>
-	</form>
+	<div id="header"><img src="images/header_wide.jpg"> </div>
+	<img id="indexBg" src="images/alpha_bg.jpg" />
+	
+	<div id="categoryButtons">
+		<button class="catButtons" type="button" value="1" onclick="categoryChange(this)" > Celebrity </button>
+		<button class="catButtons" type="button" value="2" onclick="categoryChange(this)" > Bollywood Movies </button>
+	</div>
+	
 	   
 	
 	<script>
-	 function categoryChange(){
-		var catSelected = document.getElementById("category").options[document.getElementById("category").selectedIndex].value;
+	 function categoryChange(sel){
+		var catSelected = sel.value;
 		window.document.location.href = "game.html?category=" + catSelected;
 	 }
 	</script>
