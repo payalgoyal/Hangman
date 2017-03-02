@@ -111,6 +111,8 @@ var compare=function(word,enteredKey,ran) {
 			flag=1;
 		} 		 
 		
+		opt = 0;
+		
 		//executes when enteredKey is not present anywhere in the word
 		if (changed === 0 ){
 			//while loop to ensure no wrong choice repeats
@@ -167,7 +169,11 @@ var compare=function(word,enteredKey,ran) {
 						document.getElementById('current').innerHTML = streak;
 						document.getElementById('play_again').innerHTML = "Play Again";
 						// document.getElementById("play_again").appendChild(btn);
-						flag=1;						
+						flag=1;		
+						var keyElem = document.getElementsByClassName("keys");
+						for(var keyEle=0;keyEle<keyElem.length;keyEle++){
+							keyElem[keyEle].disabled = true;
+						}
 						break;
 					default:		
 				}
@@ -178,12 +184,16 @@ var compare=function(word,enteredKey,ran) {
 
 //on clicking play again
 function playAgain(){
+	var keyElem = document.getElementsByClassName("keys");
+	for(var keyEle=0;keyEle<keyElem.length;keyEle++){
+		keyElem[keyEle].disabled = false;
+	}
 	num = num + 1;
 	flag=0;
 	wrongChoice = 0;
 	document.getElementById('wrong_choices').innerHTML = "&nbsp;";
 	document.getElementById('cartoon').innerHTML = "";
-	document.getElementById('chances').innerHTML = "Chances Left - "+(5-wrongChoice);
+	// document.getElementById('chances').innerHTML = "Chances Left - "+(5-wrongChoice);
 	document.getElementById('play_again').innerHTML = "Play Again";
 	var x = document.createElement("IMG");
 	x.setAttribute("src", "images/cartoon_1.png");
