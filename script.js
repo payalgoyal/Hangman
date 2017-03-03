@@ -39,6 +39,7 @@ var main=function(incompleteWord,completeWord) {
 };
 
 var returnRandom= function() {
+	bestStr = localStorage.getItem("bestS")== null?0:localStorage.getItem("bestS");
 	ran = Math.floor(Math.random() * incompleteWord.length);
 	if (ranCheck.length === 0){
 		ranCheck[0] = ran;
@@ -62,6 +63,7 @@ var returnRandom= function() {
 
 var resetFunc = function(){
 	ran=returnRandom();
+	blankSpace = 1;
 	document.getElementById('query').innerHTML = incompleteWord[ran];
 	for (var ch=0;ch<incompleteWord[ran].length;ch++){
 		charIncompleteArray[ch] = incompleteWord[ran][ch];
@@ -101,11 +103,14 @@ var compare=function(word,enteredKey,ran) {
 			// document.getElementById('chances').innerHTML = "You are correct!!";
 			streak++;
 			document.getElementById('current').innerHTML = streak;
-			if (streak<maxStreak)
-				maxStreak=maxStreak;
-			else 
-				maxStreak=streak;
-			document.getElementById('best').innerHTML = maxStreak;
+			localStorage.setItem("bestS",Math.max(streak,bestStr));
+			document.getElementById('best').innerHTML = localStorage.getItem("bestS");
+			// if (streak<maxStreak)
+				// maxStreak=maxStreak;
+			// else 
+				// maxStreak=streak;
+			// localStorage.setItem("best",Math.max(maxStreak,bestStr));
+			// document.getElementById('best').innerHTML = maxStreak;
 			document.getElementById('play_again').innerHTML = "Next";
 			// document.getElementById("play_again").appendChild(btn);
 			flag=1;
@@ -184,6 +189,10 @@ var compare=function(word,enteredKey,ran) {
 
 //on clicking play again
 function playAgain(){
+	if(blankSpace == 1){
+		document.getElementById('current').innerHTML = 0;
+		streak = 0;
+	}
 	var keyElem = document.getElementsByClassName("keys");
 	for(var keyEle=0;keyEle<keyElem.length;keyEle++){
 		keyElem[keyEle].disabled = false;

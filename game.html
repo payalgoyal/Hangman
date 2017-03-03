@@ -39,6 +39,13 @@
 	</div>
 	
 	<script>
+		if(localStorage.getItem("bestS") == null){
+			document.getElementById('best').innerHTML = 0;
+		}
+		else{
+			document.getElementById('best').innerHTML = localStorage.getItem("bestS");
+		}
+		
 		for (keys = 65; keys <= 90; keys++){
 			var key = document.createElement("button");
 			key.setAttribute("type","button");
