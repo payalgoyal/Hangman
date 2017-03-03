@@ -1,4 +1,28 @@
-
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 html{
     height: 100%;
     margin: 0;
@@ -25,6 +49,12 @@ img, embed, object, video {
     margin-right: auto;
 	width: 100%;
 }
+#content{
+	background-image: url("images/alpha_bg.png");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
 #game_area {
 	display: block;
 	width: 80%;
@@ -34,44 +64,55 @@ img, embed, object, video {
 }
 
 #currStreak {
-	float:left;
+	float:right;
+	width: 150px;
 }
+
 #bestStreak {
 	float: right;
-    width: 200px;
+	width: 150px;
 }
-#streakDetails{
-	height: 5%;
-}
+/* span.streak{
+	clear: both;
+	display: block;
+} */
 #query {
 	font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 8px;
 	width: 100%;
+	margin-top: 3%;
 }
 .streak {
 	font-family: courier, 'Lato', verdana, sans-serif;
 	font-weight: 300;
     font-size: 0.8em;
-	clear: left;
-	float: right;
+	clear: both;
+	display: block;
+	/* clear: left;
+	float: right; */
+
 }
 #current {
 	padding-right: 120px;
 }
 
 #wrong_choices {
-	position: relative;
+	clear: both;
 	text-decoration: line-through;
-	float: right;
-	margin-top: 10%;
-	font-size: 0.8em;
+	text-align: center;
+	font-weight: 200;
+	font-size: 1em;
+	width: 100%;
 }
 
 #play_again {
-	min-height:25px;
+	min-height:2%;
 	margin-top: 5%;
 	margin-bottom: 15px;
+	border: none;
+	background: none;
+	font-size: 0.9em;
 }
 #play_again button {
 	padding: 8px 20px 8px 20px;
@@ -92,9 +133,9 @@ img, embed, object, video {
 }
 #play_area{
 	clear: both;
-	min-height:40%;
+	min-height:35%;
 	text-align: center;
-	margin-top: 20%;
+	margin-top: 6%;
 	/* padding-top: 20%; */
 }
 #cartoon img {
@@ -108,6 +149,7 @@ img, embed, object, video {
 #footer {
 	position: absolute;
 	display: block;
+	min-height:25%;
 	bottom:0;
 	margin-top: 10%;
     margin-left: auto;
@@ -130,8 +172,9 @@ img, embed, object, video {
 	width: 40%;
 }
 #chanceDiagram{
-	height: 20%;
+	height: 25%;
 	clear: both;
+	margin-left: 35%;
 }
 #indexBg{
 	position: relative;
@@ -154,16 +197,20 @@ img, embed, object, video {
 	/* margin-top: -40%; */
 /*} */
 #categoryButtons{
-	position: relative;
-	margin-top: -50%;
+	/* background-image: url("images/alpha_bg.jpg"); */
+	/* position: relative;
+	margin-top: -10%;
 	margin-left: 45%;
-	z-index: 2;
+	z-index: 2; */
 }
 .catButtons{
 	border: none;
 	background: none;
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 	display: block;
-	margin: 5%;
-	padding: 3%;
+	/* margin: 5%; */
+	padding: 1%;
+	font-weight: 300;
+    font-size: 2em;
 }
