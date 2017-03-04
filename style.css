@@ -50,8 +50,8 @@ img, embed, object, video {
 	width: 100%;
 }
 #content{
-	background-image: url("images/alpha_bg.png");
-	background-size: cover;
+	background-image: url("images/alpha_bg_fullscreen.png");
+	background-size: contain;
 	height: 100%;
 	width: 100%;
 }
@@ -107,8 +107,8 @@ img, embed, object, video {
 }
 
 #play_again {
-	min-height:2%;
-	margin-top: 5%;
+	min-height:1%;
+	margin-top: 3%;
 	margin-bottom: 15px;
 	border: none;
 	background: none;
@@ -147,11 +147,11 @@ img, embed, object, video {
 }
 
 #footer {
-	position: absolute;
+	/* position: absolute; */
 	display: block;
-	min-height:25%;
+	min-height:20%;
 	bottom:0;
-	margin-top: 10%;
+	/* margin-top: 2%; */
     margin-left: auto;
     margin-right: auto;
 	width:100%;
@@ -213,4 +213,9 @@ img, embed, object, video {
 	padding: 1%;
 	font-weight: 300;
     font-size: 2em;
+	font-family: myFirstFont;
+}
+@font-face {
+   font-family: myFirstFont;
+   src: url(font/AmaticSC-Bold.ttf);
 }

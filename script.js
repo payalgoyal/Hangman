@@ -81,8 +81,10 @@ var compare=function(word,enteredKey,ran) {
 		//checks if the enteredKey is present in word
 		while (index<word.length){
 			if (enteredKey === word[index]){
-				charIncompleteArray[index] = enteredKey;	
-				changed = 1;
+				charIncompleteArray[index] = enteredKey;
+				if(incompleteWord[ran][index] == "_"){
+					changed = 1;
+				}
 			} 						
 			index = index+1;
 		}	
