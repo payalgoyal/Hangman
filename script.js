@@ -69,6 +69,7 @@ var resetFunc = function(){
 		charIncompleteArray[ch] = incompleteWord[ran][ch];
 		charIncompleteArray.splice(incompleteWord[ran].length,charIncompleteArray.length);
 	}
+	document.getElementById('play_again').innerHTML = "Skip";
 }
 
 var compare=function(word,enteredKey,ran) {
@@ -144,31 +145,36 @@ var compare=function(word,enteredKey,ran) {
 					case 1:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/cartoon_2.png");
+						x.setAttribute("style", "height:23%");
 						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 2:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/cartoon_3.png");
-						x.setAttribute("width", "123");
+						x.setAttribute("style", "height:23%");
+						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 3:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/cartoon_4.png");
-						x.setAttribute("width", "123");
+						x.setAttribute("style", "height:23%");
+						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 4:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/cartoon_5.png");
-						x.setAttribute("width", "123");
+						x.setAttribute("style", "height:23%");
+						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 5:
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/animation.gif");
-						x.setAttribute("width", "123");
+						x.setAttribute("style", "height:23%");
+						// x.setAttribute("width", "123");
 						document.getElementById("cartoon").appendChild(x);
 						// document.getElementById('chances').innerHTML = "Game Over";
 						document.getElementById('query').innerHTML = word;
@@ -208,7 +214,8 @@ function playAgain(){
 	document.getElementById('play_again').innerHTML = "Play Again";
 	var x = document.createElement("IMG");
 	x.setAttribute("src", "images/cartoon_1.png");
-	x.setAttribute("width", "123");
+	x.setAttribute("style", "height:23%");
+	// x.setAttribute("width", "123");
 	document.getElementById("cartoon").appendChild(x);
 	resetFunc();
 }

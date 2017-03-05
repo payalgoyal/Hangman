@@ -17,30 +17,30 @@
 <body>
 	   
 	<div id="wrapper">
-	<div id="header"><img src="images/header_wide.jpg"> </div>
-		<div id="content">
-			<div id="game_area">
-				<!-- <div id="streakDetails"> -->
-					<span id="bestStreak" class="streak">Best Streak:<span id="best">0</span></span>
-					<span id="currStreak" class="streak">Current streak:<span id="current">0</span></span>
-				<!-- </div> -->
-				<div id="chanceDiagram">
-					<div id="cartoon"> <img src="images/cartoon_1.png"> </div>
-					<div class="chancesLeft">Chances Left Diagram</div>
-					
-				</div>
-				
-				<div id="play_area">
-					<span id="wrong_choices">&nbsp;</span><br/>	
-					<p id="query"></p><br/>
-					<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Play Again</button>
-				</div>
+	<div id="header"><img src="images/headerAlt2.png" style="height:10%;width:100%"> </div>
+	<div id="content">
+		<span id="bestStreak" class="streak">Best Streak:<span id="best">0</span></span>
+		<span id="currStreak" class="streak">Current streak:<span id="current">0</span></span>
+
+		 <div id="game_area">
+			<div id="chanceDiagram">
+				<div id="cartoon"> <img src="images/cartoon_1.png" style="height:23%"> </div>
+			</div>
+			
+			<div id="play_area">
+				<span id="wrong_choices">&nbsp;</span><br/>	
+				<p id="query"></p><br/>
 				
 			</div>
-			<div id="footer">
-				
-			</div>
-		</div>
+			
+		</div> 
+		
+	</div>
+	
+	<div id="footer">
+			<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Skip</button><br>
+	</div>
+		
 	</div>
 	
 	<script>
@@ -50,7 +50,6 @@
 		else{
 			document.getElementById('best').innerHTML = localStorage.getItem("bestS");
 		}
-		
 		for (keys = 65; keys <= 90; keys++){
 			var key = document.createElement("button");
 			key.setAttribute("type","button");
@@ -62,6 +61,9 @@
 			var foot = document.getElementById("footer");
 			foot.appendChild(key);
 		}
+		var key = document.createElement("br");
+		var foot = document.getElementById("footer");
+		foot.appendChild(key);
 		for (keys = 48; keys <= 57; keys++){
 			var key = document.createElement("button");
 			key.setAttribute("type","button");
@@ -73,6 +75,7 @@
 			var foot = document.getElementById("footer");
 			foot.appendChild(key);
 		}
+		
 		var queryString = new Array();
 		var query = window.location.search.split('?')[1];
 		var cat = query.split('=')[1];
