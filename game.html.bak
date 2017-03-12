@@ -13,61 +13,33 @@
 	<script src="inventionList.js"></script> -->
 	<script src="jquery-1.11.2.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css" />
-	<link rel="stylesheet" type="text/css" href="css/csshake-default.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/csshake-slow.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/csshake-horizontal.min.css" />
 </head>
-	<audio id="playAgainAudio" src="assets/typewriter_key.mp3"></audio>
-	<audio id="correctAnswerComplete" src="assets/correctAnswerComplete.m4a"></audio>
-	<audio id="correctLetter" src="assets/correctLetter.m4a"></audio>
-	<audio id="wrongLetter" src="assets/wrongLetter.wav"></audio>
-	<audio id="selectedLetter" src="assets/selectedLetter.m4a"></audio>
-	<audio id="wrongAnswerComplete" src="assets/wrongAnswerComplete.mp3"></audio>
 <body>
 	   
 	<div id="wrapper">
-	<div id="header">
-		<!-- <img src="images/header_bg_repeat.png" style="height:10%;width:100%"> -->
-		HANGMAN
-	</div>
+	<div id="header"><img src="images/headerAlt2.png" style="height:10%;width:100%"> </div>
 	<div id="content">
-		<div id="streaks" style="height:7%">
-			<span id="bestStreak" class="streak">Best Streak:<span id="best">0</span></span>
-			<span id="currStreak" class="streak">Current streak:<span id="current">0</span></span>
-		</div>
+		<span id="bestStreak" class="streak">Best Streak:<span id="best">0</span></span>
+		<span id="currStreak" class="streak">Current streak:<span id="current">0</span></span>
 
-		<div id="game_area">
+		 <div id="game_area">
 			<div id="chanceDiagram">
-				<div id="cartoon"> <img src="images/cartoon_1.png" style="height:15%"> </div>
+				<div id="cartoon"> <img src="images/cartoon_1.png" style="height:23%"> </div>
 			</div>
 			
 			<div id="play_area">
-				<div id="wrong_ans">
-					<span class="wrong_choices" id="wrong_choices1">&nbsp;</span>
-					<span class="wrong_choices" id="wrong_choices2"></span>
-					<span class="wrong_choices" id="wrong_choices3"></span>
-					<span class="wrong_choices" id="wrong_choices4"></span>
-					<span class="wrong_choices" id="wrong_choices5"></span><br/>
-				</div>
-				<div id="queryZone">
-					<div id="queryArea">
-						<!-- <p id="query"></p><br/> -->
-					</div>
-				</div>
-				<div id="queryZoneDup">
-					<div id="queryAreaDup">
-						<!-- <p id="query"></p><br/> -->
-					</div>
-				</div>
+				<span id="wrong_choices">&nbsp;</span><br/>	
+				<p id="query"></p><br/>
+				
 			</div>
+			
 		</div> 
-		<div id="footer">
-				<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Skip</button><br>
-				<div id="keyBoard"></div>
-		</div>
+		
 	</div>
 	
-	
+	<div id="footer">
+			<button type="button" id="play_again" onclick="playAgain()" value="Play Again">Skip</button><br>
+	</div>
 		
 	</div>
 	
@@ -86,9 +58,12 @@
 			key.setAttribute("onclick","registerEnteredKey(this)");
 			key.innerHTML = String.fromCharCode(keys);
 			
-			var keyBrd = document.getElementById("keyBoard");
-			keyBoard.appendChild(key);
+			var foot = document.getElementById("footer");
+			foot.appendChild(key);
 		}
+		var key = document.createElement("br");
+		var foot = document.getElementById("footer");
+		foot.appendChild(key);
 		for (keys = 48; keys <= 57; keys++){
 			var key = document.createElement("button");
 			key.setAttribute("type","button");
@@ -97,8 +72,8 @@
 			key.setAttribute("onclick","registerEnteredKey(this)");
 			key.innerHTML = String.fromCharCode(keys);
 			
-			var keyBrd = document.getElementById("keyBoard");
-			keyBrd.appendChild(key);
+			var foot = document.getElementById("footer");
+			foot.appendChild(key);
 		}
 		
 		var queryString = new Array();

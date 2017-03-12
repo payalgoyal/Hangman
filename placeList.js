@@ -1,6 +1,6 @@
 function placeList(){
 	var list = [];
-	list.push({incompWord: "A__T__L_A",
+	list.push({incompWord: "A____A__A",
 		compWord: "AUSTRALIA"});
 		
 	list.push({incompWord: "A__EN__NA",
@@ -39,7 +39,7 @@ function placeList(){
 	list.push({incompWord: "_O__A _I_A",
 		compWord: "COSTA RICA"});
 		
-	list.push({incompWord: "C__C_ _E__B__C",
+	list.push({incompWord: "C__C_ __P_B__C",
 		compWord: "CZECH REPUBLIC"});
 	
 	list.push({incompWord: "_E__A_K",
@@ -60,7 +60,7 @@ function placeList(){
 	list.push({incompWord: "F__N_E",
 		compWord: "FRANCE"});
 	
-	list.push({incompWord: "_E__G_A",
+	list.push({incompWord: "_E_R__A",
 		compWord: "GEORGIA"});
 		
 	list.push({incompWord: "G_R_A__",
@@ -69,13 +69,13 @@ function placeList(){
 	list.push({incompWord: "__EE_E",
 		compWord: "GREECE"});
 		
-	list.push({incompWord: "__EE__AN_",
+	list.push({incompWord: "__EE__A_D",
 		compWord: "GREENLAND"});
 		
 	list.push({incompWord: "G_I__A",
 		compWord: "GUINEA"});
 		
-	list.push({incompWord: "H_N_ _O_G",
+	list.push({incompWord: "H_N_ __N_",
 		compWord: "HONG KONG"});
 		
 	list.push({incompWord: "_U__A_Y",
@@ -84,10 +84,10 @@ function placeList(){
 	list.push({incompWord: "I_E_A_D",
 		compWord: "ICELAND"});
 		
-	list.push({incompWord: "_N_I_",
+	list.push({incompWord: "I__I_",
 		compWord: "INDIA"});
 		
-	list.push({incompWord: "_N_O_E_IA",
+	list.push({incompWord: "_N__NE__A",
 		compWord: "INDONESIA"});
 		
 	list.push({incompWord: "I__L__D",
@@ -108,34 +108,34 @@ function placeList(){
 	list.push({incompWord: "_E_S_Y",
 		compWord: "JERSEY"});
 		
-	list.push({incompWord: "_I_ER_A",
+	list.push({incompWord: "_I__RI_",
 		compWord: "LIBERIA"});
 		
 	list.push({incompWord: "L__E__O_RG",
 		compWord: "LUXEMBOURG"});
 		
-	list.push({incompWord: "_A_AG__C_R",
+	list.push({incompWord: "_A_A_A__AR",
 		compWord: "MADAGASCAR"});
 		
-	list.push({incompWord: "_A_A_SI_",
+	list.push({incompWord: "_A_A___A",
 		compWord: "MALAYSIA"});
 		
 	list.push({incompWord: "_A__I_I_S",
 		compWord: "MAURITIUS"});
 		
-	list.push({incompWord: "__X_CO",
+	list.push({incompWord: "__X__O",
 		compWord: "MEXICO"});
 		
 	list.push({incompWord: "_AL_I__S",
 		compWord: "MALDIVES"});
 		
-	list.push({incompWord: "M_A__AR",
+	list.push({incompWord: "M_A_MA_",
 		compWord: "MYANMAR"});
 		
-	list.push({incompWord: "_E__ER__N_S",
+	list.push({incompWord: "_E__ER___DS",
 		compWord: "NETHERLANDS"});
 		
-	list.push({incompWord: "_E_ __AL__D",
+	list.push({incompWord: "_E_ _E_L__D",
 		compWord: "NEW ZEALAND"});
 		
 	list.push({incompWord: "__G_R_A",
@@ -144,7 +144,7 @@ function placeList(){
 	list.push({incompWord: "N__T_ K__EA",
 		compWord: "NORTH KOREA"});
 		
-	list.push({incompWord: "P_L___I_E",
+	list.push({incompWord: "P_L___IN_",
 		compWord: "PALESTINE"});
 		
 	list.push({incompWord: "_HI_I__I__S",
@@ -165,7 +165,7 @@ function placeList(){
 	list.push({incompWord: "_U__IA",
 		compWord: "RUSSIA"});
 		
-	list.push({incompWord: "_A__I A_A__A",
+	list.push({incompWord: "_A_D_ A_A__A",
 		compWord: "SAUDI ARABIA"});
 		
 	list.push({incompWord: "S___A___E",
@@ -189,10 +189,10 @@ function placeList(){
 	list.push({incompWord: "_H__L__D",
 		compWord: "THAILAND"});
 		
-	list.push({incompWord: "_N__E_ _T_T__",
+	list.push({incompWord: "_N_T__ _T_T__",
 		compWord: "UNITED STATES"});
 		
-	list.push({incompWord: "_I_B___E",
+	list.push({incompWord: "_I__A__E",
 		compWord: "ZIMBABWE"});
 	
 	incompleteWord = [];
