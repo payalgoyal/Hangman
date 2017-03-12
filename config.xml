@@ -59,7 +59,7 @@
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="cordova-plugin-globalization" />
     <plugin name="cordova-plugin-inappbrowser" /> -->
-    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="cordova-plugin-media" />
    <!--  <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
     <plugin name="cordova-plugin-vibration" />
