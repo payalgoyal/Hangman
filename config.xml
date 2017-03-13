@@ -16,8 +16,7 @@
         Abhi Payal
     </author>
 
-  <!-- Customize your app and platform with the preference element. -->
-    <!-- <preference name="phonegap-version"           value="cli-6.3.0" />    -->       <!-- all: current version of PhoneGap -->
+ <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
@@ -30,35 +29,43 @@
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-minSdkVersion"      value="" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-
-    <preference name="android-build-tool" value="gradle" />
+    <!-- <preference name="splash-screen-duration" value="800"/> -->
+	<!-- <preference name="SplashScreen" value="splash" /> -->
+	<!-- <preference name="SplashScreenDelay" value="800" /> -->
+	<preference name="permissions" value="none"/>
+	<!--
+        Define a specific version of PhoneGap to build into your app.
+        <preference name="phonegap-version"       value="3.5.0" />
+    -->
 
     <!-- Plugins -->
 
-    <!-- Core plugins -->
-    <!-- <gap:plugin name="org.apache.cordova.battery-status" />
-    <gap:plugin name="org.apache.cordova.camera" />
-    <gap:plugin name="org.apache.cordova.media-capture" />
-    <gap:plugin name="org.apache.cordova.console" />
-    <gap:plugin name="org.apache.cordova.contacts" />
-    <gap:plugin name="org.apache.cordova.device" />
-    <gap:plugin name="org.apache.cordova.device-motion" />
-    <gap:plugin name="org.apache.cordova.device-orientation" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
-    <gap:plugin name="org.apache.cordova.file" />
-    <gap:plugin name="org.apache.cordova.file-transfer" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.globalization" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" /> -->
+	 <!-- Core plugins -->
+    <plugin name="cordova-plugin-battery-status" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-media-capture" />
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-contacts" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-file" />
+    <!-- <plugin name="cordova-plugin-file-transfer" /> -->
+    <plugin name="cordova-plugin-geolocation" />
+    <plugin name="cordova-plugin-globalization" />
+   <!--  <plugin name="cordova-plugin-inappbrowser" /> -->
     <plugin name="cordova-plugin-media" />
-    <!-- <gap:plugin name="org.apache.cordova.network-information" />
-    <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.vibration" /> -->
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-vibration" />
 
-    <!-- Pushwoosh plugin -->
-    <gap:plugin name="pushwoosh-pgb-plugin" source="npm" />
+	<!-- <gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" /> -->
+	<!-- 
+	<gap:plugin name="com.cordova.plugins.file-transfer" /> -->
+
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
