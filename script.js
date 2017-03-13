@@ -578,7 +578,7 @@ function playAgain(){
 
 function registerEnteredKey(keyEntered){
 	keyEntered.setAttribute("style","transition-timing-function:ease-in;transition:0.1s;transform:translateX(0%) translateY(-25%);");
-	playAudio("keyPressAudio");
+	// playAudio("keyPressAudio");
 	setTimeout(function(){
 		keyEntered.setAttribute("style","font-size: 1.4em;");
 		enteredKey = keyEntered.innerHTML;
