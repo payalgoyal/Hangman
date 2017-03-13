@@ -165,7 +165,7 @@ var compare=function(word,enteredKey,ran) {
 				}
 				else{
 					correctIndex[inde++] = index;
-					// playAudio("correctLetter");
+					playAudio("correctLetter");
 				}
 				charIncompleteArray[index] = enteredKey;
 				for (var i=0;i<incompleteWord[ran].length;i++){
@@ -188,7 +188,10 @@ var compare=function(word,enteredKey,ran) {
 					for(var unMatched=unMatch;unMatched<indices[indic];unMatched++){
 						a[unMatched] = document.getElementById("query"+unMatched).innerHTML;
 					}
-					a[unMatched] = "<span class='shake'>" + document.getElementById("query"+unMatched).innerHTML + "</span>";
+					// a[unMatched] = "<span class='shake'>" + document.getElementById("query"+unMatched).innerHTML + "</span>";
+					a[unMatched] = document.getElementById("query"+unMatched).innerHTML;
+					// var addCss = document.getElementById("query"+unMatched);
+					// addCss.setAttribute("class","shake");
 					unMatch = indices[indic]+1;
 				}
 			}
@@ -219,7 +222,7 @@ var compare=function(word,enteredKey,ran) {
 		//if some letters are still remaining
 		if (blankSpace > 0){
 			if(a.length!=0){
-				// playAudio("selectedLetter");
+				playAudio("selectedLetter");
 				var querySpanArea = document.getElementById("queryArea");
 				while(querySpanArea.firstChild){
 					querySpanArea.removeChild(querySpanArea.firstChild);
@@ -231,6 +234,9 @@ var compare=function(word,enteredKey,ran) {
 					querySpan.setAttribute("class","query");
 					querySpan.setAttribute("id","query"+qsA);
 					querySpan.innerHTML = a[qsA];
+					if (a[qsA] == enteredKey){
+						querySpan.classList.add("shake");
+					}
 					
 					var queryAreaElem = document.getElementById("queryArea");
 					queryAreaElem.appendChild(querySpan);
@@ -331,7 +337,7 @@ var compare=function(word,enteredKey,ran) {
 		}
 		//if all letters are matched
 		else {
-			// playAudio("correctAnswerComplete");
+			playAudio("correctAnswerComplete");
 			// document.getElementById('query').innerHTML = word;
 			var querySpanArea = document.getElementById("queryArea");
 			while(querySpanArea.firstChild){
@@ -359,7 +365,9 @@ var compare=function(word,enteredKey,ran) {
 			// localStorage.setItem("best",Math.max(maxStreak,bestStr));
 			// document.getElementById('best').innerHTML = maxStreak;
 			document.getElementById('play_again').innerHTML = "Next";
-			document.getElementById('play_again').classList.add("shake-slow");
+			// document.getElementById('play_again').classList.add("shake-slow");
+			var pAgain = document.getElementById('play_again');
+			pAgain.setAttribute("class","shake-slow");
 			setTimeout(function(){
 				document.getElementById('play_again').classList.remove("shake-slow");
 			},500);
@@ -418,8 +426,10 @@ var compare=function(word,enteredKey,ran) {
 			while(opt<wrongChoice){
 				if (enteredKey === wrongOption[opt]){
 					alreadySelected = 1;
-					// playAudio("selectedLetter");
-					document.getElementById("wrong_choices"+(opt+1)).classList.add("shake");
+					playAudio("selectedLetter");
+					// document.getElementById("wrong_choices"+(opt+1)).classList.add("shake");
+					var wCh = document.getElementById("wrong_choices"+(opt+1));
+					wCh.setAttribute("class","shake");
 					var keyElem = document.getElementsByClassName("keys");
 					for(var keyEle=0;keyEle<keyElem.length;keyEle++){
 						keyElem[keyEle].disabled = true;
@@ -440,7 +450,7 @@ var compare=function(word,enteredKey,ran) {
 			}
 			//executes when unique wrong choice is selected
 			if (alreadySelected === 0){
-				// playAudio("wrongLetter");
+				playAudio("wrongLetter");
 				wrongOption[wrongChoice] = enteredKey;
 				wrongChoice = wrongChoice+1;
 				document.getElementById('wrong_choices'+(opt+1)).innerHTML = enteredKey;
@@ -481,7 +491,7 @@ var compare=function(word,enteredKey,ran) {
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 5:
-						// playAudio("wrongAnswerComplete");
+						playAudio("wrongAnswerComplete");
 						// document.getElementById("wrong_choices5").innerHTML = enteredKey;
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/animation.gif");
@@ -548,7 +558,7 @@ var compare=function(word,enteredKey,ran) {
 
 //on clicking play again
 function playAgain(){
-	// playAudio("playAgainAudio");
+	playAudio("playAgainAudio");
 	var elem = document.getElementById("correctState");
 	if(elem != null){
 		elem.parentNode.removeChild(elem);
