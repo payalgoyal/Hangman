@@ -33,7 +33,7 @@ var playAudio = function(audioID) {
 
 var main=function(incompleteWord,completeWord) {
 	// var enteredKey;
-	playAudio("playAgainAudio");
+	// playAudio("playAgainAudio");
 	ran=returnRandom();
 	// document.getElementById('query').innerHTML = incompleteWord[ran];
 	wordLength = incompleteWord[ran].length;
