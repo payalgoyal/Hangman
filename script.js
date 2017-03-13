@@ -143,7 +143,7 @@ var compare=function(word,enteredKey,ran) {
 		var indice = 0;
 		var indices = [];
 		var inWord;
-		var a;
+		var a = [];
 		incompleteArrayWord = "";
 		
 		// while (index<word.length){
@@ -165,7 +165,7 @@ var compare=function(word,enteredKey,ran) {
 				}
 				else{
 					correctIndex[inde++] = index;
-					playAudio("correctLetter");
+					// playAudio("correctLetter");
 				}
 				charIncompleteArray[index] = enteredKey;
 				for (var i=0;i<incompleteWord[ran].length;i++){
@@ -175,23 +175,26 @@ var compare=function(word,enteredKey,ran) {
 			}
 			index++;
 		}
+		a.length = 0;
 		if (indices.length > 0){
 			unMatch = 0;
-			a = "";
+			// a = "";
+			a.length = completeWord[ran].length;
+			for (var al=0;al<a.length;al++){
+				a[al] = null;
+			}
 			for (var indic=0;indic<indices.length;indic++){
 				if(unMatch<word.length){
 					for(var unMatched=unMatch;unMatched<indices[indic];unMatched++){
-						a += document.getElementById("query"+unMatched).innerHTML;
+						a[unMatched] = document.getElementById("query"+unMatched).innerHTML;
 					}
-					a += "<span class='shake'>";
-					a += document.getElementById("query"+unMatched).innerHTML;
-					a += "</span>";
+					a[unMatched] = "<span class='shake'>" + document.getElementById("query"+unMatched).innerHTML + "</span>";
 					unMatch = indices[indic]+1;
 				}
 			}
 			if(unMatch<word.length){
 				for(var um=unMatch;um<word.length;um++){
-					a += document.getElementById("query"+um).innerHTML;
+					a[um] = document.getElementById("query"+um).innerHTML;
 				}
 			}
 			
@@ -215,20 +218,23 @@ var compare=function(word,enteredKey,ran) {
 		}
 		//if some letters are still remaining
 		if (blankSpace > 0){
-			if(a!=undefined){
-				playAudio("selectedLetter");
+			if(a.length!=0){
+				// playAudio("selectedLetter");
 				var querySpanArea = document.getElementById("queryArea");
 				while(querySpanArea.firstChild){
 					querySpanArea.removeChild(querySpanArea.firstChild);
 				}
 				
-				var querySpan = document.createElement("span");
-				querySpan.setAttribute("class","query");
-				querySpan.setAttribute("id","query"+0);
-				querySpan.innerHTML = a;
-				
-				var queryAreaElem = document.getElementById("queryArea");
-				queryAreaElem.appendChild(querySpan);
+				wordLength = completeWord[ran].length;
+				for (var qsA=0;qsA<wordLength;qsA++){
+					var querySpan = document.createElement("span");
+					querySpan.setAttribute("class","query");
+					querySpan.setAttribute("id","query"+qsA);
+					querySpan.innerHTML = a[qsA];
+					
+					var queryAreaElem = document.getElementById("queryArea");
+					queryAreaElem.appendChild(querySpan);
+				}
 
 				// document.getElementById('query').innerHTML = a;
 				var keyElem = document.getElementsByClassName("keys");
@@ -325,7 +331,7 @@ var compare=function(word,enteredKey,ran) {
 		}
 		//if all letters are matched
 		else {
-			playAudio("correctAnswerComplete");
+			// playAudio("correctAnswerComplete");
 			// document.getElementById('query').innerHTML = word;
 			var querySpanArea = document.getElementById("queryArea");
 			while(querySpanArea.firstChild){
@@ -412,7 +418,7 @@ var compare=function(word,enteredKey,ran) {
 			while(opt<wrongChoice){
 				if (enteredKey === wrongOption[opt]){
 					alreadySelected = 1;
-					playAudio("selectedLetter");
+					// playAudio("selectedLetter");
 					document.getElementById("wrong_choices"+(opt+1)).classList.add("shake");
 					var keyElem = document.getElementsByClassName("keys");
 					for(var keyEle=0;keyEle<keyElem.length;keyEle++){
@@ -434,7 +440,7 @@ var compare=function(word,enteredKey,ran) {
 			}
 			//executes when unique wrong choice is selected
 			if (alreadySelected === 0){
-				playAudio("wrongLetter");
+				// playAudio("wrongLetter");
 				wrongOption[wrongChoice] = enteredKey;
 				wrongChoice = wrongChoice+1;
 				document.getElementById('wrong_choices'+(opt+1)).innerHTML = enteredKey;
@@ -475,7 +481,7 @@ var compare=function(word,enteredKey,ran) {
 						document.getElementById("cartoon").appendChild(x);
 						break;
 					case 5:
-						playAudio("wrongAnswerComplete");
+						// playAudio("wrongAnswerComplete");
 						// document.getElementById("wrong_choices5").innerHTML = enteredKey;
 						var x = document.createElement("IMG");
 						x.setAttribute("src", "images/animation.gif");
@@ -542,7 +548,7 @@ var compare=function(word,enteredKey,ran) {
 
 //on clicking play again
 function playAgain(){
-	playAudio("playAgainAudio");
+	// playAudio("playAgainAudio");
 	var elem = document.getElementById("correctState");
 	if(elem != null){
 		elem.parentNode.removeChild(elem);
