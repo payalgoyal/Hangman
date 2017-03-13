@@ -6,7 +6,7 @@
 	<script src="script.js"></script> 
 	<script src="jquery-1.11.2.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css" />
-	<script type="text/javascript" src="phonegap.js"></script>
+	<!-- <script type="text/javascript" src="phonegap.js"></script> -->
 </head>
 	<audio id="switchFlick" src="/android_asset/www/assets/switchFlick.ogg"></audio>
 
@@ -29,7 +29,6 @@
 	
 	<script>
 	 function categoryChange(sel){
-		debugger;
 		playAudio("switchFlick");
 		var catSelected = sel.value;
 		window.document.location.href = "game.html?category=" + catSelected;
